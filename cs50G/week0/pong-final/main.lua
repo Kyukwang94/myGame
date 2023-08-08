@@ -22,22 +22,22 @@
 -- a more retro aesthetic
 --
 -- https://github.com/Ulydev/push
-push = require 'push'
+push = require 'week0.pong-finall.push'
 
 -- the "Class" library we're using will allow us to represent anything in
 -- our game as code, rather than keeping track of many disparate variables and
 -- methods
 --
 -- https://github.com/vrld/hump/blob/master/class.lua
-Class = require 'class'
+Class = require 'week0.pong-finall.class'
 
 -- our Paddle class, which stores position and dimensions for each Paddle
 -- and the logic for rendering them
-require 'Paddle'
+require 'week0.pong-finall.Paddle'
 
 -- our Ball class, which isn't much different than a Paddle structure-wise
 -- but which will mechanically function very differently
-require 'Ball'
+require 'week0.pong-finall.Ball'
 
 -- size of our actual window
 WINDOW_WIDTH = 1280
