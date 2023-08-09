@@ -48,7 +48,7 @@ function love.resize(w, h)
     push:resize(w, h)
 end
 
-function love.keypressed(key)
+function love.keypressed(key)-- only account key is preed once can't detect held down
     if key == 'escape' then
         love.event.quit()
     end
@@ -61,7 +61,7 @@ function love.draw()
     love.graphics.draw(background, 0, 0)
 
     -- draw the ground on top of the background, toward the bottom of the screen
-    love.graphics.draw(ground, 0, VIRTUAL_HEIGHT - 16)
+    love.graphics.draw(ground, 0 , VIRTUAL_HEIGHT - 10)
     
     push:finish()
 end
