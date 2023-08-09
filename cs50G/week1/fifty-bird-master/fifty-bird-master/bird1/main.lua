@@ -70,7 +70,7 @@ function love.update(dt)
       
 
     -- scroll ground by preset speed * dt, looping back to 0 after the screen width passes
-    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) 
+    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) -- set to 0 at certain number.!!!!!!!!!!
         % VIRTUAL_WIDTH
 end
 
