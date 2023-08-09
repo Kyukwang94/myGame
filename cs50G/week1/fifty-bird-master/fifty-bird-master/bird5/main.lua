@@ -121,18 +121,18 @@ function love.update(dt)
         print('Added new pipe!')
         spawnTimer = 0
     end
-    -- 왜 commit 이 안될까 !
+    
 
     -- update the bird for input and gravity
     bird:update(dt)
 
     -- for every pipe in the scene...
-    for k, pipe in pairs(pipes) do
+    for pipe_key, pipe in pairs(pipes) do
         pipe:update(dt)
 
         -- if pipe is no longer visible past left edge, remove it from scene
         if pipe.x < -pipe.width then
-            table.remove(pipes, k)
+            table.remove(pipes, pipe_key)
         end
     end
 
@@ -147,7 +147,7 @@ function love.draw()
     love.graphics.draw(background, -backgroundScroll, 0)
 
     -- render all the pipes in our scene
-    for k, pipe in pairs(pipes) do
+    for pipe_key, pipe in pairs(pipes) do
         pipe:render()
     end
 
