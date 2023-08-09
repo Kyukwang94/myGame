@@ -116,15 +116,15 @@ function love.update(dt)
     spawnTimer = spawnTimer + dt
 
     -- spawn a new Pipe if the timer is past 2 seconds
+
+    -- update the bird for input and gravity
+    bird:update(dt)
+
     if spawnTimer > 2 then
         table.insert(pipes, Pipe())
         print('Added new pipe!')
         spawnTimer = 0
     end
-    
-
-    -- update the bird for input and gravity
-    bird:update(dt)
 
     -- for every pipe in the scene...
     for pipe_key, pipe in pairs(pipes) do
