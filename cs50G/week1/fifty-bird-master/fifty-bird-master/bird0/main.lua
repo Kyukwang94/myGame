@@ -23,7 +23,7 @@ WINDOW_HEIGHT = 720
 
 -- virtual resolution dimensions
 VIRTUAL_WIDTH = 512
-VIRTUAL_HEIGHT = 288
+VIRTUAL_HEIGHT = 288 
 
 -- images we load into memory from files to later draw onto the screen
 local background = love.graphics.newImage('background.png')
