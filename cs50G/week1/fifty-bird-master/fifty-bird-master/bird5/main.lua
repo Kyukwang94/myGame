@@ -40,6 +40,7 @@ VIRTUAL_HEIGHT = 288
 -- background image and starting scroll location (X axis)
 local background = love.graphics.newImage('background.png')
 local backgroundScroll = 0
+local groundY = VIRTUAL_HEIGHT - 16 - verticalScroll
 
 -- ground image and starting scroll location (X axis)
 local ground = love.graphics.newImage('ground.png')
