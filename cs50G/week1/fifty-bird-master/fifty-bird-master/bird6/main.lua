@@ -68,7 +68,7 @@ local pipePairs = {}
 local spawnTimer = 0
 
 -- initialize our last recorded Y value for a gap placement to base other gaps off of
-local lastY = -PIPE_HEIGHT + math.random(40) + 20
+local lastY = -PIPE_HEIGHT + math.random(80) + 20
 
 function love.load()
     -- initialize our nearest-neighbor filter
@@ -129,8 +129,12 @@ function love.update(dt)
         -- modify the last Y coordinate we placed so pipe gaps aren't too far apart
         -- no higher than 10 pixels below the top edge of the screen,
         -- and no lower than a gap length (90 pixels) from the bottom
-        local y = math.max(-PIPE_HEIGHT + 10,math.min(lastY + math.random(-20, 20), VIRTUAL_HEIGHT - 90 - PIPE_HEIGHT))
-                 
+        local y = lastY + math.random(-20, 20) -- Introduce some vertical randomness
+        if y < -PIPE_HEIGHT + 10 then
+            y = -PIPE_HEIGHT + 10
+        elseif y > VIRTUAL_HEIGHT - 90 - PIPE_HEIGHT then
+            y = VIRTUAL_HEIGHT - 90 - PIPE_HEIGHT
+        end
         lastY = y
 
         table.insert(pipePairs, PipePair(y))
